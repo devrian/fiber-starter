@@ -1,0 +1,9 @@
+CREATE TABLE public.user_otps (
+	id SERIAL PRIMARY KEY,
+	email VARCHAR(100) UNIQUE NOT NULL,
+    phone VARCHAR(15) UNIQUE NOT NULL,
+    otp VARCHAR(6) NOT NULL,
+	expired_date TIMESTAMPTZ(0) NOT NULL,
+	created_date TIMESTAMPTZ(0) NOT NULL,
+	updated_date TIMESTAMPTZ(0) NULL
+);

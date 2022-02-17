@@ -1,0 +1,21 @@
+CREATE TABLE public.users (
+	id SERIAL PRIMARY KEY,
+	code VARCHAR(10) UNIQUE NOT NULL,
+    role_id INTEGER REFERENCES roles(id) NOT NULL,
+    "role" VARCHAR(50) NOT NULL,
+	"name" VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    phone VARCHAR(15) UNIQUE NOT NULL,
+    "password" VARCHAR(100) NOT NULL,
+    "address" TEXT NULL,
+    img TEXT NULL,
+    remember_token TEXT NULL,
+	"status" BOOLEAN DEFAULT false NOT NULL,
+	created_date TIMESTAMPTZ(0) NOT NULL,
+    created_by VARCHAR(10) NOT NULL,
+	updated_date TIMESTAMPTZ(0) NULL,
+    updated_by VARCHAR(10) NULL,
+	deleted_date TIMESTAMPTZ(0) NULL,
+    deleted_by VARCHAR(10) NULL,
+    "version" INTEGER NOT NULL
+);
